@@ -2,7 +2,7 @@ item:
   name: "&c&lChọn Máy Chủ"
   material: "EMERALD"
   glow: true
-  slot: 40
+  slot: 4
   command: "menu"
   lore:
     - ""
