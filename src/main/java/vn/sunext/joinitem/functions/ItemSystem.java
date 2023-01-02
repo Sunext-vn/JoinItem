@@ -36,9 +36,11 @@ public class ItemSystem {
     public void onInteract(PlayerInteractEvent event) {
         if (event.getAction() == Action.RIGHT_CLICK_BLOCK || event.getAction() == Action.RIGHT_CLICK_AIR) {
 
-            Player player = event.getPlayer();
+            if (Objects.equals(event.getItem(), chooseServerItem.getItemStack())) {
+                Player player = event.getPlayer();
 
-            chooseServerItem.runCommand(player);
+                chooseServerItem.runCommand(player);
+            }
 
         }
     }
