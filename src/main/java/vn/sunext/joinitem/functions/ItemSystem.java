@@ -47,16 +47,11 @@ public class ItemSystem {
         Player player = event.getPlayer();
 
         ItemStack itemStack = event.getItemDrop().getItemStack();
-        ItemMeta meta = itemStack.getItemMeta();
 
-        String chooseServerItemName = Objects.requireNonNull(chooseServerItem.getItemStack().getItemMeta()).getDisplayName();
+        if (Objects.equals(itemStack, chooseServerItem.getItemStack())) {
+            player.sendMessage(colorSystem.color("&cServer &7> &aNhấn chuột phải để chọn server!"));
 
-        if (meta != null) {
-            if (meta.getDisplayName().equalsIgnoreCase(chooseServerItemName)) {
-                player.sendMessage(colorSystem.color("&cServer &7> &aNhấn chuột phải để chọn server!"));
-
-                event.setCancelled(true);
-            }
+            event.setCancelled(true);
         }
     }
 
@@ -68,7 +63,7 @@ public class ItemSystem {
     }
 
     public void onSwap(PlayerSwapHandItemsEvent event) {
-        if (Objects.equals(event.getMainHandItem(), chooseServerItem.getItemStack()))
+        if (Objects.equals(event.getOffHandItem(), chooseServerItem.getItemStack()))
             event.setCancelled(true);
     }
 
