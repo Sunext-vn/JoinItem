@@ -1,0 +1,9 @@
+item:
+  name: "&c&lChọn Máy Chủ"
+  material: "EMERALD"
+  glow: true
+  slot: 40
+  command: "menu"
+  lore:
+    - ""
+    - "&eChuột-phải vào đây để chọn máy chủ!"
