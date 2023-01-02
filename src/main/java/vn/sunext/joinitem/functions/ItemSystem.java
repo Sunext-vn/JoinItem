@@ -8,6 +8,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerSwapHandItemsEvent;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -63,6 +64,11 @@ public class ItemSystem {
         int slot = event.getSlot();
 
         if (slot == chooseServerItem.getSlot())
+            event.setCancelled(true);
+    }
+
+    public void onSwap(PlayerSwapHandItemsEvent event) {
+        if (Objects.equals(event.getMainHandItem(), chooseServerItem.getItemStack()))
             event.setCancelled(true);
     }
 

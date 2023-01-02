@@ -6,10 +6,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import vn.sunext.joinitem.functions.ColorSystem;
 import vn.sunext.joinitem.functions.ItemSystem;
-import vn.sunext.joinitem.listeners.ClickEvent;
-import vn.sunext.joinitem.listeners.DropEvent;
-import vn.sunext.joinitem.listeners.InteractEvent;
-import vn.sunext.joinitem.listeners.JoinEvent;
+import vn.sunext.joinitem.listeners.*;
 import vn.sunext.joinitem.managers.PathManager;
 
 @Getter
@@ -38,6 +35,7 @@ public final class JoinItem extends JavaPlugin {
         registerEvent(new DropEvent());
         registerEvent(new InteractEvent());
         registerEvent(new JoinEvent());
+        registerEvent(new SwapEvent());
     }
 
     @Override
