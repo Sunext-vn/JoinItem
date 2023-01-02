@@ -67,6 +67,10 @@ public class ItemSystem {
             event.setCancelled(true);
     }
 
+    public void onEnable(Player player) {
+        chooseServerItem.addItem(player);
+    }
+
     public void onDisable(Player player) {
         chooseServerItem.removeItem(player);
     }

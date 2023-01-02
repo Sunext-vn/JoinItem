@@ -36,6 +36,8 @@ public final class JoinItem extends JavaPlugin {
         registerEvent(new InteractEvent());
         registerEvent(new JoinEvent());
         registerEvent(new SwapEvent());
+
+        Bukkit.getOnlinePlayers().forEach(player -> itemSystem.onEnable(player));
     }
 
     @Override
