@@ -1,4 +1,4 @@
-# JoinItem
+# JoinItem [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 If you want to use fast-connect function, you need to use the command of the plugin.
 
 ## Command
