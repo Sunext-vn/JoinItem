@@ -4,3 +4,8 @@ main: vn.sunext.joinitem.JoinItem
 api-version: 1.19
 authors: [ sunext_team, adselvn ]
 website: https://github.com/Sunext-vn
+
+commands:
+  sendplayer:
+    aliases:
+      - sp

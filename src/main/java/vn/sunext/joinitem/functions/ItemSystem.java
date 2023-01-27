@@ -34,13 +34,24 @@ public class ItemSystem {
     }
 
     public void onInteract(PlayerInteractEvent event) {
+        Player player = event.getPlayer();
+
+        if (event.getAction() == Action.LEFT_CLICK_BLOCK || event.getAction() == Action.LEFT_CLICK_AIR) {
+
+            if (plugin.getFileManager().getLastJoinServer(player.getName()).isEmpty()) {
+                event.getPlayer().sendMessage(colorSystem.color("&cServer &7/ &eKhông tìm thấy máy chủ bạn từng tham gia trước đó!"));
+
+                return;
+            }
+
+            plugin.getConnectSystem().sendPlayer(player, plugin.getFileManager().getLastJoinServer(player.getName()));
+
+        }
+
         if (event.getAction() == Action.RIGHT_CLICK_BLOCK || event.getAction() == Action.RIGHT_CLICK_AIR) {
 
-            if (Objects.equals(event.getItem(), chooseServerItem.getItemStack())) {
-                Player player = event.getPlayer();
-
+            if (Objects.equals(event.getItem(), chooseServerItem.getItemStack()))
                 chooseServerItem.runCommand(player);
-            }
 
         }
     }
